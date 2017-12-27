@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route,
   IndexRoute,
   hashHistory,
@@ -26,7 +26,7 @@ import Contact from'./components/pages/contactPage';
 const app = document.getElementById('root');
 
 ReactDOM.render(
-	<Router>
+	<HashRouter>
 		<Switch>
 			<Route exact path="/" component={App}/>
 			<Route exact path="/about" component={Homepage} />
@@ -34,6 +34,6 @@ ReactDOM.render(
 			<Route exact path="/portfolio" component={Portfolio}/>
 			<Route exact path="/contact" component={Contact}/>
 		</Switch>
-	</Router>, 
+	</HashRouter>, 
 	app);
-registerServiceWorker();
+

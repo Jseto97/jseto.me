@@ -1,5 +1,6 @@
 // Include gulp
 var gulp = require('gulp');
+var ghPages = require('gulp-gh-pages');
 
 // Include Our Plugins
 var minifyCSS = require('gulp-clean-css');
@@ -42,3 +43,8 @@ gulp.task('watch', function() {
 
 // Default Task
 gulp.task('default', ['watch']);
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
