@@ -1,0 +1,424 @@
+@import "_config.scss";
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+@import url(https://fonts.googleapis.com/css?family=Allan);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT);
+
+
+/* Style for header */
+
+
+/* General styles */
+
+.aboutSection{
+	margin: auto;
+	padding: 20px;
+}
+.hero {
+  background-color: white;
+  border: 2px solid black;  
+  margin-top: 60px;
+  margin-bottom: 0px;
+  margin-left: 15%;
+  margin-right: 15%;
+
+	padding-top: 60px;
+	font: 400 20px 'Alegreya', sans-serif;
+	text-align: center;	  
+	@media screen and (max-width: 600px) {
+    	padding: 0;
+    	font-size: 15px;
+      border: none;
+      margin: none;
+    }
+    @media (min-width: 768px) {
+    	font-size: 18px; 
+     }
+    @media (min-width: 1400px) {
+    border: none;
+		padding-top: 80px;
+		font-size: 30px;
+
+	}
+
+	.About{
+		text-align: left;
+		margin: auto;
+		padding: 25px;
+    padding-bottom: 60px;
+
+	}
+}
+
+
+
+/* Style for header */
+
+.sticky{
+
+	height: 60px !important;
+
+}
+.navigation{
+	  		  &.active {
+   				 background-color: solid white;
+  			}
+}
+footer{
+  padding: 10px;
+  margin-top: 40px;
+  background-color: #232528;
+
+  font: 400 20px 'Allan', sans-serif;
+  .foot{
+    color: white;
+    text-align: center;
+
+  }
+  .footcopy{
+    font: 400 20px 'Allan', sans-serif;
+    padding-left: 10px;
+    right: 0;
+  }
+}
+header {
+	position: fixed;
+  	top: 0;
+  	z-index: 9999;
+  	width: 100%;
+  	background: $black;
+  	color: #fff;
+  	line-height: 150px;
+    -webkit-transition: height .5s, line-height .5s; /* Safari */
+    transition: height .5s, line-height .5s;
+
+    @media screen and (max-width: 600px) {
+    	position: relative;
+      height: 100px;
+    }
+
+
+	.logo {
+		position: absolute;
+		left: 30px;    
+    @media screen and (max-width: 600px) {
+      left: 20px;
+    }
+    @media screen and (max-width: 400px) {
+      left: 15px;
+    }
+
+
+	}
+  ul.nav {
+    overflow: hidden;
+    li {
+      position: relative;
+      float: left;
+      width: 35%;
+      a {
+        display: block;
+        height: 0px;
+        opacity: 0;
+        font: 400 1.15em 'Kaushan Script', serif;
+        line-height: 50px;
+        color: #848e92;
+        text-decoration: none;
+        text-align: center;
+        cursor: default;
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+         @media screen and (max-width: 600px) { 
+            font-size: 1em;
+           }
+        @media screen and (min-width: 992px) { 
+            font-size: 1.5em;
+           }
+
+        &:hover{
+   	 	  color: #fff;
+    		background-color: $black;
+  		}
+
+  		img{
+			height: 2.2em;
+      @media screen and (max-width: 600px) { 
+      height: 1.8em;
+    }
+
+		}
+      }
+    }
+    @media screen and (max-width: 600px) {
+      position: relative;
+      height: 120px;
+    }
+  }
+  &.active ul.nav li a {
+  	background: $black;
+    height: 100px;
+    opacity: 1;
+    line-height: 100px;
+    cursor: pointer;
+  }
+  &.sticky ul.nav li a {
+  	line-height: 60px;
+  	font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header ul.nav li {
+    float: none;
+    width: 100%;
+    a {
+      height: 0;
+    }
+  }
+}
+
+/* Style for header with active class name */
+
+@media screen and (max-width: 600px) {
+  header.active ul.nav li a {
+  	background: $black;
+    height: 60px;
+  }
+}
+@media screen and (min-width: 992px) { 
+      header.active ul.nav li a {
+    background: $black;
+    height: 120px;
+  }
+}
+button.fade{
+	height: 60px !important;
+	visibility: hidden;
+	display: none;
+}
+/* Style for the plus button */
+button.toggle-nav {
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 60px;
+  background-color: #ED292D;
+  font: 400 1.2em 'Allan', serif;
+  color: $white;
+  border: none;
+  line-height: 30px;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+    
+    @media screen and (max-width: 600px) {
+    	position:absolute;
+    }
+  &:hover {
+    height: 75px;
+    opacity: 1;
+  }
+  span {
+    display: block;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+  }
+}
+
+/* Style for the plus button when header has active classe name */
+
+header.active button.toggle-nav {
+  height: 40px;
+  top: 100px;
+  background-color: #800000;
+      @media screen and (min-width: 992px) {
+      top: 120px;
+    }
+  span {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+  }
+    &:hover {
+    height: 65px;
+    opacity: 1;
+  }
+}
+
+.Experience {
+  margin: 60px;
+  padding-top: 60px;
+  font: 400 20px 'Alegreya', sans-serif;
+  text-align: center;   
+  @media screen and (max-width: 600px) {
+      padding: 0;
+      font-size: 15px;
+      border: none;
+      margin: none;
+    }
+    @media (min-width: 768px) {
+      font-size: 18px; 
+     }
+    @media (min-width: 992px) {
+    padding-top: 80px;
+    font-size: 30px;
+
+  }
+  .resume{
+    color: black;
+  }
+  .smol{
+    font-size: 19px;
+      @media screen and (max-width: 600px) {
+      padding: 0;
+      font-size: 15px;
+      border: none;
+      margin: none;
+     }
+    }
+}
+section.timeStyles{
+  color: black;
+  text-align: justify;
+  margin-left: auto;
+
+}
+
+.contactme{
+  border: solid 2px black;
+  margin: auto;
+  margin-top: 200px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  padding: 20px;
+  width: 50%;
+  font: 400 20px 'Alegreya', sans-serif;
+  background-color: white;
+  color: black;
+  box-shadow: 10px 10px 5px grey;
+  .icons{
+    color: #0172B1;
+    font-family: 'Cabin';
+    text-decoration: none;
+  }
+  .icons2{
+    color: #00AB6C;
+    font-family: 'Cabin';
+    text-decoration: none;
+
+  }
+  .icons3{
+    color: #4C2348;
+    font-family: 'Droid Sans';
+    text-decoration: none;
+  }
+    .linkCenter{
+    margin: auto;
+    text-align: center;
+  }
+  h1{
+    font-family: 'Cabin';
+  }
+  h1:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    margin-left: 30px;
+    background: #232528;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+      margin-top: 80px;
+      padding: 0;
+      font-size: 15px;
+      border: none;
+      margin: none;
+    }
+    @media (min-width: 768px) {
+      font-size: 18px; 
+     }
+    @media (min-width: 992px) {
+    font-size: 30px;
+
+  }
+
+}
+.portpage{
+  margin: 60px;
+  padding-top: 80px;
+  font: 400 20px 'Alegreya', sans-serif;
+  text-align: center;   
+  @media screen and (max-width: 600px) {
+      padding: 0;
+      font-size: 15px;
+      border: none;
+      margin: none;
+    }
+    @media (min-width: 768px) {
+      font-size: 18px; 
+     }
+    @media (min-width: 992px) {
+    padding-top: 80px;
+    font-size: 30px;
+
+  }
+}
+/* Other styles */
+body{
+     font: 400 20px 'Droid Sans', sans-serif;
+     line-height: 1.5em;
+     background-color: #F3F4EB;  
+     color: $black;
+}
+
+a {
+
+  &:hover {
+      color: black;  
+      text-decoration: none;
+  }
+
+
+}
+strong:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    margin-left: 30px;
+    background: #232528;
+}
+
+section {
+  padding: 3em;
+}
+
+h1 {
+  margin-top: .8em;
+  font-size: 40px;
+  line-height: 1.5em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+
+@media screen and (max-width: 600px) {
+  section {
+    padding: 1.5em;
+  }
+}
+
+
+// Experience
